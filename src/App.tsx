@@ -1,9 +1,10 @@
 import { useState } from "react";
+import Login from "./Pages/Login";
 
 function App() {
   return (
     <>
-      <div>hello</div>
+      <Login />
     </>
   );
 }
