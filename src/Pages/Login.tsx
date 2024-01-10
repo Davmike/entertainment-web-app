@@ -8,7 +8,7 @@ export interface showLoginProps {
 export default function Login({ showLogin, setShowLogin }: showLoginProps) {
   return (
     <div>
-      {showLogin && (
+      {!showLogin && (
         <div className="flex justify-center items-center flex-col min-h-screen">
           <img src={logo} alt="" />
           <div className="bg-[#161D2F] rounded-[10px] w-[327px] h-[365px] mt-[58px] px-[24px] pt-[24px] pb-[32px]">

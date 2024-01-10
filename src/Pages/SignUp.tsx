@@ -4,7 +4,7 @@ import { showLoginProps } from "./Login";
 export default function SignUp({ showLogin, setShowLogin }: showLoginProps) {
   return (
     <div>
-      {!showLogin && (
+      {showLogin && (
         <div className="flex justify-center items-center flex-col min-h-screen">
           <img src={logo} alt="" />
           <div className="bg-[#161D2F] rounded-[10px] w-[327px] h-[420px] mt-[58px] px-[24px] pt-[24px] pb-[32px]">
