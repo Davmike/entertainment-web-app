@@ -11,10 +11,26 @@ export default function Header() {
       <div className="bg-[#161D2F] flex justify-between items-center px-[16px] h-[56px]">
         <img src={logo} alt="" className="w-[25px] h-[20px]" />
         <div className="flex items-center gap-[25px]">
-          <img src={home} alt="" />
-          <img src={movies} alt="" />
-          <img src={tv} alt="" />
-          <img src={save} alt="" />
+          <img
+            src={home}
+            className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
+            alt=""
+          />
+          <img
+            className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
+            src={movies}
+            alt=""
+          />
+          <img
+            className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
+            src={tv}
+            alt=""
+          />
+          <img
+            className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
+            src={save}
+            alt=""
+          />
         </div>
         <img src={profile} alt="" className="w-[24px] h-[24px]" />
       </div>
