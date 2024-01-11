@@ -22,3 +22,16 @@ input::placeholder {
   opacity: 0.5;
   padding-bottom: 18px;
 }
+
+.searchInput {
+  background: #10141e;
+  outline: none;
+  color: white;
+}
+
+.searchInput::placeholder {
+  font-size: 16px;
+  color: white;
+  opacity: 0.5;
+  font-weight: 300;
+}
