@@ -15,6 +15,10 @@ body {
   font-family: "Outfit", sans-serif;
 }
 
+input {
+  caret-color: #fc4747;
+}
+
 input::placeholder {
   font-size: 15px;
   font-weight: 300;
