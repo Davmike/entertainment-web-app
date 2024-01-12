@@ -1,4 +1,4 @@
-import logo from "../assets/logo.svg";
+import logo from "../../public/assets/logo.svg";
 
 export interface showLoginProps {
   showLogin: boolean;

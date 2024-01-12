@@ -1,4 +1,4 @@
-import search from "../assets/icon-search.svg";
+import search from "../../public/assets/icon-search.svg";
 
 export default function SearchBar() {
   return (
