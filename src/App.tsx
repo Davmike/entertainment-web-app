@@ -5,16 +5,24 @@ import Header from "./Components/Header";
 import SearchBar from "./Components/SearchBar";
 import Trending from "./Components/Trending";
 import Recomended from "./Components/Recomended";
+import Movies from "./Components/Movies";
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
+  const [showMovie, setShowMovie] = useState(true);
 
   return (
     <>
-      <Header />
+      <Header setShowMovie={setShowMovie} />
       <SearchBar />
-      <Trending />
-      <Recomended />
+      {!showMovie ? (
+        <Movies showMovie={showMovie} />
+      ) : (
+        <>
+          <Trending />
+          <Recomended />
+        </>
+      )}
       {showLogin ? (
         <Login showLogin={showLogin} setShowLogin={setShowLogin} />
       ) : (

@@ -5,7 +5,11 @@ import tv from "../../public/assets/icon-nav-tv-series.svg";
 import save from "../../public/assets/icon-nav-bookmark.svg";
 import profile from "../../public/assets/image-avatar.png";
 
-export default function Header() {
+export interface showMovieProps {
+  setShowMovie: (hidden: boolean) => void;
+}
+
+export default function Header({ setShowMovie }: showMovieProps) {
   return (
     <header>
       <div className="bg-[#161D2F] flex justify-between items-center px-[16px] h-[56px]">
@@ -20,6 +24,7 @@ export default function Header() {
             className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
             src={movies}
             alt=""
+            onClick={() => setShowMovie(false)}
           />
           <img
             className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
