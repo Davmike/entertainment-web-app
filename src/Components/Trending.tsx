@@ -7,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Trending() {
   const settings = {
-    // dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 1.5,
@@ -25,7 +24,7 @@ export default function Trending() {
           {MovieData.map((movie, index) => {
             return movie.isTrending ? (
               <div
-                className="w-[240px] h-[140px] relative mt-[16px] pl-[16px]"
+                className="max-w-[240px] h-[140px] relative mt-[16px] pl-[16px]"
                 key={index}
               >
                 <img
@@ -33,7 +32,7 @@ export default function Trending() {
                   alt=""
                   className="rounded-[8px] w-[240px] h-[140px]"
                 />
-                <div className="w-[32px] h-[32px] bg-[#596276] rounded-full flex justify-center items-center absolute top-[5%] left-[84%]">
+                <div className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[84%]">
                   <img src={save} alt="" />
                 </div>
                 <div className="pl-[16px] absolute top-[60%]">
@@ -54,7 +53,7 @@ export default function Trending() {
                     </p>
                   </div>
                   <h2 className="text-[15px] text-[white] font-medium">
-                    Beyond Earth
+                    {movie.title}
                   </h2>
                 </div>
               </div>

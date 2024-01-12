@@ -40,6 +40,10 @@ input::placeholder {
   font-weight: 300;
 }
 
-/* .slick-slide > div {
-  margin: 0 10px;
-} */
+.slick-slide {
+  max-width: 250px;
+}
+
+.slick-list {
+  max-width: 550px;
+}
