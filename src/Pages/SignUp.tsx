@@ -48,7 +48,6 @@ export default function SignUp() {
               type="text"
               placeholder="Email address"
               {...register("email", { required: "Can’t be empty" })}
-              onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
             <input
@@ -56,7 +55,6 @@ export default function SignUp() {
               type="password"
               placeholder="Password"
               {...register("password", { required: "Can’t be empty" })}
-              onChange={(e) => setPassword(e.target.value)}
             />
             {errors.password && (
               <p className="error">{errors.password.message}</p>
@@ -66,7 +64,6 @@ export default function SignUp() {
               type="password"
               placeholder="Repeat Password"
               {...register("resetPassword", { required: "Can’t be empty" })}
-              onChange={(e) => setResetPassword(e.target.value)}
             />
             {errors.resetPassword && (
               <p className="error">{errors.resetPassword.message}</p>

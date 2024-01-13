@@ -2,7 +2,6 @@ import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MyContext } from "./Components/Context";
 import Layout from "./Components/Layout";
-import Trending from "./Components/Trending";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 
