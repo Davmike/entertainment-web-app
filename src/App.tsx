@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { MyContext } from "./Components/Context";
-import Layout from "./Components/layout";
+import Layout from "./Components/Layout";
 import Trending from "./Components/Trending";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
@@ -12,13 +14,15 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
+      element: <Login />,
+    },
+    {
+      path: "/signup",
+      element: <SignUp />,
+    },
+    {
+      path: "/layout",
       element: <Layout />,
-      children: [
-        {
-          path: "trending",
-          element: <Trending />,
-        },
-      ],
     },
   ]);
 

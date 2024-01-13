@@ -47,3 +47,11 @@ input::placeholder {
 .slick-list {
   max-width: 550px;
 }
+
+.error {
+  color: #fc4747;
+  font-size: 13px;
+  font-weight: 300;
+  position: absolute;
+  right: 231px;
+}

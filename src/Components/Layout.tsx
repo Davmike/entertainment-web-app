@@ -1,13 +1,13 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 export default function Layout() {
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate("/trending");
-  }, []);
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   navigate("");
+  // }, []);
 
   return (
     <>
