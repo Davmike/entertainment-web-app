@@ -1,33 +1,41 @@
 import { useState } from "react";
-import Login from "./Pages/Login";
-import SignUp from "./Pages/SignUp";
-import Header from "./Components/Header";
-import SearchBar from "./Components/SearchBar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { MyContext } from "./Components/Context";
+import Layout from "./Components/layout";
 import Trending from "./Components/Trending";
-import Recomended from "./Components/Recomended";
-import Movies from "./Components/Movies";
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
   const [showMovie, setShowMovie] = useState(true);
+  const [showSeries, setShowSeries] = useState(true);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "trending",
+          element: <Trending />,
+        },
+      ],
+    },
+  ]);
 
   return (
     <>
-      <Header setShowMovie={setShowMovie} />
-      <SearchBar />
-      {!showMovie ? (
-        <Movies showMovie={showMovie} />
-      ) : (
-        <>
-          <Trending />
-          <Recomended />
-        </>
-      )}
-      {showLogin ? (
-        <Login showLogin={showLogin} setShowLogin={setShowLogin} />
-      ) : (
-        <SignUp showLogin={showLogin} setShowLogin={setShowLogin} />
-      )}
+      <MyContext.Provider
+        value={{
+          showLogin,
+          setShowLogin,
+          showMovie,
+          setShowMovie,
+          showSeries,
+          setShowSeries,
+        }}
+      >
+        <RouterProvider router={router} />
+      </MyContext.Provider>
     </>
   );
 }

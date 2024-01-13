@@ -7,7 +7,6 @@ export interface showMovieProps {
 }
 
 const moviesData = MovieData.filter((item) => item.category === "Movie");
-// const tvSeriesData = MovieData.filter(item => item.category === 'TV Series');
 
 export default function Movies({ showMovie }: showMovieProps) {
   return (

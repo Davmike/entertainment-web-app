@@ -4,6 +4,7 @@ import MovieData from "../../data.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Recomended from "./Recomended";
 
 export default function Trending() {
   const settings = {
@@ -61,6 +62,7 @@ export default function Trending() {
           })}
         </Slider>
       </div>
+      <Recomended />
     </div>
   );
 }
