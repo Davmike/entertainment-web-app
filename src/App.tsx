@@ -4,6 +4,8 @@ import { MyContext } from "./Components/Context";
 import Layout from "./Components/Layout";
 import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
+import Movies from "./Components/Movies";
+import TvSeries from "./Components/TvSeries";
 
 function App() {
   const [showLogin, setShowLogin] = useState(true);
@@ -22,6 +24,14 @@ function App() {
     {
       path: "/layout",
       element: <Layout />,
+    },
+    {
+      path: "/movies",
+      element: <Movies />,
+    },
+    {
+      path: "/series",
+      element: <TvSeries />,
     },
   ]);
 

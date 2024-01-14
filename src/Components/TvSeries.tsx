@@ -1,21 +1,22 @@
 import movieImg from "../../public/assets/icon-category-movie.svg";
 import save from "../../public/assets/icon-bookmark-empty.svg";
 import MovieData from "../../data.json";
-import { useContext } from "react";
-import { MyContext } from "./Context";
+import Header from "./Header";
+import SearchBar from "./SearchBar";
 
-// const tvSeriesData = MovieData.filter(item => item.category === 'TV Series');
+const tvSeriesData = MovieData.filter((item) => item.category === "TV Series");
 
 export default function TvSeries() {
-  const context = useContext(MyContext);
   return (
-    !context?.showMovie && (
+    <>
+      <Header />
+      <SearchBar />
       <div className="mt-[24px]">
         <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
-          Movies
+          TV Series
         </h1>
         <div className="flex flex-wrap gap-y-14">
-          {MovieData.map((movie, index) => {
+          {tvSeriesData.map((movie, index) => {
             return !movie.isTrending ? (
               <div
                 className="min-w-[164px] h-[110px] relative mt-[16px] pl-[16px]"
@@ -55,6 +56,6 @@ export default function TvSeries() {
           })}
         </div>
       </div>
-    )
+    </>
   );
 }

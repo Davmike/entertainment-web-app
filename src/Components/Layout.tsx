@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
+import Trending from "./Trending";
 // import { useEffect } from "react";
 
 export default function Layout() {
@@ -13,6 +14,7 @@ export default function Layout() {
     <>
       <Header />
       <SearchBar />
+      <Trending />
       <Outlet />
     </>
   );

@@ -53,5 +53,6 @@ input::placeholder {
   font-size: 13px;
   font-weight: 300;
   position: absolute;
-  right: 231px;
+  margin-left: 190px;
+  margin-top: -28px;
 }

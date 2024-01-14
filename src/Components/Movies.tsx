@@ -1,16 +1,16 @@
 import movieImg from "../../public/assets/icon-category-movie.svg";
 import save from "../../public/assets/icon-bookmark-empty.svg";
 import MovieData from "../../data.json";
-
-export interface showMovieProps {
-  showMovie: boolean;
-}
+import Header from "./Header";
+import SearchBar from "./SearchBar";
 
 const moviesData = MovieData.filter((item) => item.category === "Movie");
 
-export default function Movies({ showMovie }: showMovieProps) {
+export default function Movies() {
   return (
-    !showMovie && (
+    <>
+      <Header />
+      <SearchBar />
       <div className="mt-[24px]">
         <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
           Movies
@@ -56,6 +56,6 @@ export default function Movies({ showMovie }: showMovieProps) {
           })}
         </div>
       </div>
-    )
+    </>
   );
 }
