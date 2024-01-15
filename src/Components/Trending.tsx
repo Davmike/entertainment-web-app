@@ -5,6 +5,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Recomended from "./Recomended";
+import unsave from "../../public/assets/icon-bookmark-empty.svg";
+import saved from "../../public/assets/icon-bookmark-full.svg";
+import { useContext } from "react";
+import { MyContext } from "./Context";
 
 export default function Trending() {
   const settings = {
@@ -14,6 +18,9 @@ export default function Trending() {
     slidesToScroll: 1,
     arrows: false,
   };
+
+  const context = useContext(MyContext);
+  const { data, setData } = context;
 
   return (
     <div className="mt-[24px]">
@@ -33,8 +40,17 @@ export default function Trending() {
                   alt=""
                   className="rounded-[8px] w-[240px] h-[140px]"
                 />
-                <div className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[84%]">
-                  <img src={save} alt="" />
+                <div
+                  className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[84%]"
+                  onClick={() => {
+                    if (!data.includes(movie)) {
+                      setData([...data, movie]);
+                    } else {
+                      setData(data.filter((film) => film !== movie));
+                    }
+                  }}
+                >
+                  <img src={data.includes(movie) ? saved : unsave} alt="" />
                 </div>
                 <div className="pl-[16px] absolute top-[60%]">
                   <div className="flex items-center gap-[8px]">

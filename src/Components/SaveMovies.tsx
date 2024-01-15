@@ -1,7 +1,8 @@
 import Header from "./Header";
 import SearchBar from "./SearchBar";
+import MovieData from "../../data.json";
 
-const tvSeriesData = MovieData.filter((item) => item.category === "");
+const SavedMovie = MovieData.filter((item) => item.category === "");
 
 export default function SaveMovies() {
   return (
@@ -13,8 +14,8 @@ export default function SaveMovies() {
           TV Series
         </h1>
         <div className="flex flex-wrap gap-y-14">
-          {tvSeriesData.map((movie, index) => {
-            return !movie.isTrending ? (
+          {SavedMovie.map((movie, index) => {
+            return !movie.isBookmarked ? (
               <div
                 className="min-w-[164px] h-[110px] relative mt-[16px] pl-[16px]"
                 key={index}
@@ -25,7 +26,7 @@ export default function SaveMovies() {
                   className="rounded-[8px] w-[100%] h-[100%]"
                 />
                 <div className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%]">
-                  <img src={save} alt="" />
+                  <img src={} alt="" />
                 </div>
                 <div className="mt-[8px]">
                   <div className="flex items-center gap-[6px]">

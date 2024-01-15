@@ -6,8 +6,11 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import Movies from "./Components/Movies";
 import TvSeries from "./Components/TvSeries";
+import Recomended from "./Components/Recomended";
 
 function App() {
+  const [data, setData] = useState([]);
+
   const [showLogin, setShowLogin] = useState(true);
   const [showMovie, setShowMovie] = useState(true);
   const [showSeries, setShowSeries] = useState(true);
@@ -33,6 +36,10 @@ function App() {
       path: "/series",
       element: <TvSeries />,
     },
+    {
+      path: "/recomended",
+      element: <Recomended />,
+    },
   ]);
 
   return (
@@ -45,6 +52,8 @@ function App() {
           setShowMovie,
           showSeries,
           setShowSeries,
+          data,
+          setData,
         }}
       >
         <RouterProvider router={router} />

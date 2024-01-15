@@ -1,8 +1,14 @@
-import movieImg from "../../public/assets/icon-category-movie.svg";
-import save from "../../public/assets/icon-bookmark-empty.svg";
 import MovieData from "../../data.json";
+import movieImg from "../../public/assets/icon-category-movie.svg";
+import unsave from "../../public/assets/icon-bookmark-empty.svg";
+import saved from "../../public/assets/icon-bookmark-full.svg";
+import { useContext } from "react";
+import { MyContext } from "./Context";
 
 export default function Recomended() {
+  const context = useContext(MyContext);
+  const { data, setData } = context;
+
   return (
     <div className="mt-[24px]">
       <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
@@ -20,8 +26,21 @@ export default function Recomended() {
                 alt=""
                 className="rounded-[8px] w-[100%] h-[100%]"
               />
-              <div className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%]">
-                <img src={save} alt="" />
+              <div
+                className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%]"
+                onClick={() => {
+                  if (!data.includes(movie)) {
+                    setData([...data, movie]);
+                  } else {
+                    setData(data.filter((film) => film !== movie));
+                  }
+                }}
+              >
+                <img
+                  src={data.includes(movie) ? saved : unsave}
+                  alt=""
+                  style={{ cursor: "pointer" }}
+                />
               </div>
               <div className="mt-[8px]">
                 <div className="flex items-center gap-[6px]">

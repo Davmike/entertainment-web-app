@@ -4,14 +4,11 @@ import movies from "../../public/assets/icon-nav-movies.svg";
 import tv from "../../public/assets/icon-nav-tv-series.svg";
 import save from "../../public/assets/icon-nav-bookmark.svg";
 import profile from "../../public/assets/image-avatar.png";
-import { useContext } from "react";
-import { MyContext } from "./Context";
 import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const navigate = useNavigate();
 
-  const context = useContext(MyContext);
   return (
     <header>
       <div className="bg-[#161D2F] flex justify-between items-center px-[16px] h-[56px]">
