@@ -11,7 +11,6 @@ import SaveMovies from "./Components/SaveMovies";
 
 function App() {
   const [data, setData] = useState([]);
-  const [savedMovies, setSavedMovies] = useState([]);
 
   const [showLogin, setShowLogin] = useState(true);
   const [showMovie, setShowMovie] = useState(true);
@@ -60,8 +59,6 @@ function App() {
           setShowSeries,
           data,
           setData,
-          savedMovies,
-          setSavedMovies,
         }}
       >
         <RouterProvider router={router} />

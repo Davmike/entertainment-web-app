@@ -40,7 +40,7 @@ export default function Trending() {
                   className="rounded-[8px] w-[240px] h-[140px]"
                 />
                 <div
-                  className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[84%]"
+                  className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[84%] cursor-pointer"
                   onClick={() => {
                     if (!data.includes(movie)) {
                       setData([...data, movie]);

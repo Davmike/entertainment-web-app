@@ -34,7 +34,7 @@ export default function TvSeries() {
                   className="rounded-[8px] w-[100%] h-[100%]"
                 />
                 <div
-                  className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%]"
+                  className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%] cursor-pointer"
                   onClick={() => {
                     if (!data.includes(movie)) {
                       setData([...data, movie]);
