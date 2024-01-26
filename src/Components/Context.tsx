@@ -9,6 +9,8 @@ interface ComponentsProps {
   setShowSeries: (showSeries: boolean) => void;
   data: any;
   setData: (data: any) => void;
+  savedMovies: any;
+  setSavedMovies: any;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);
