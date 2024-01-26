@@ -1,5 +1,4 @@
 import movieImg from "../../public/assets/icon-category-movie.svg";
-import save from "../../public/assets/icon-bookmark-empty.svg";
 import MovieData from "../../data.json";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -20,7 +19,7 @@ export default function Trending() {
   };
 
   const context = useContext(MyContext);
-  const { data, setData } = context;
+  const { data, setData }: any = context;
 
   return (
     <div className="mt-[24px]">
@@ -46,7 +45,45 @@ export default function Trending() {
                     if (!data.includes(movie)) {
                       setData([...data, movie]);
                     } else {
-                      setData(data.filter((film) => film !== movie));
+                      setData(
+                        data.filter(
+                          (
+                            film:
+                              | {
+                                  title: string;
+                                  thumbnail: {
+                                    trending: { small: string; large: string };
+                                    regular: {
+                                      small: string;
+                                      medium: string;
+                                      large: string;
+                                    };
+                                  };
+                                  year: number;
+                                  category: string;
+                                  rating: string;
+                                  isBookmarked: boolean;
+                                  isTrending: boolean;
+                                }
+                              | {
+                                  title: string;
+                                  thumbnail: {
+                                    regular: {
+                                      small: string;
+                                      medium: string;
+                                      large: string;
+                                    };
+                                    trending?: undefined;
+                                  };
+                                  year: number;
+                                  category: string;
+                                  rating: string;
+                                  isBookmarked: boolean;
+                                  isTrending: boolean;
+                                }
+                          ) => film !== movie
+                        )
+                      );
                     }
                   }}
                 >

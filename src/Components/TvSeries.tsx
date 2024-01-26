@@ -1,5 +1,4 @@
 import movieImg from "../../public/assets/icon-category-movie.svg";
-import save from "../../public/assets/icon-bookmark-empty.svg";
 import MovieData from "../../data.json";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
@@ -12,7 +11,7 @@ const tvSeriesData = MovieData.filter((item) => item.category === "TV Series");
 
 export default function TvSeries() {
   const context = useContext(MyContext);
-  const { data, setData } = context;
+  const { data, setData }: any = context;
 
   return (
     <>
@@ -40,7 +39,45 @@ export default function TvSeries() {
                     if (!data.includes(movie)) {
                       setData([...data, movie]);
                     } else {
-                      setData(data.filter((film) => film !== movie));
+                      setData(
+                        data.filter(
+                          (
+                            film:
+                              | {
+                                  title: string;
+                                  thumbnail: {
+                                    trending: { small: string; large: string };
+                                    regular: {
+                                      small: string;
+                                      medium: string;
+                                      large: string;
+                                    };
+                                  };
+                                  year: number;
+                                  category: string;
+                                  rating: string;
+                                  isBookmarked: boolean;
+                                  isTrending: boolean;
+                                }
+                              | {
+                                  title: string;
+                                  thumbnail: {
+                                    regular: {
+                                      small: string;
+                                      medium: string;
+                                      large: string;
+                                    };
+                                    trending?: undefined;
+                                  };
+                                  year: number;
+                                  category: string;
+                                  rating: string;
+                                  isBookmarked: boolean;
+                                  isTrending: boolean;
+                                }
+                          ) => film !== movie
+                        )
+                      );
                     }
                   }}
                 >

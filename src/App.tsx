@@ -7,6 +7,7 @@ import SignUp from "./Pages/SignUp";
 import Movies from "./Components/Movies";
 import TvSeries from "./Components/TvSeries";
 import Recomended from "./Components/Recomended";
+import SaveMovies from "./Components/SaveMovies";
 
 function App() {
   const [data, setData] = useState([]);
@@ -39,6 +40,10 @@ function App() {
     {
       path: "/recomended",
       element: <Recomended />,
+    },
+    {
+      path: "/saved-movies",
+      element: <SaveMovies />,
     },
   ]);
 

@@ -11,7 +11,7 @@ export default function SaveMovies() {
       <SearchBar />
       <div className="mt-[24px]">
         <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
-          TV Series
+          Bookmarked Movies
         </h1>
         <div className="flex flex-wrap gap-y-14">
           {SavedMovie.map((movie, index) => {
@@ -26,7 +26,7 @@ export default function SaveMovies() {
                   className="rounded-[8px] w-[100%] h-[100%]"
                 />
                 <div className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%]">
-                  <img src={} alt="" />
+                  {/* <img src={} alt="" /> */}
                 </div>
                 <div className="mt-[8px]">
                   <div className="flex items-center gap-[6px]">
@@ -35,7 +35,7 @@ export default function SaveMovies() {
                     </p>
                     <div className="bg-white rounded-full w-[2px] h-[2px] opacity-[0.5]"></div>
                     <div className="flex items-center gap-[6px]">
-                      <img src={movieImg} alt="" />
+                      {/* <img src={movieImg} alt="" /> */}
                       <p className="text-[11px] text-[white] font-light opacity-[0.75]">
                         {movie.category}
                       </p>

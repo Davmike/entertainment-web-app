@@ -36,6 +36,7 @@ export default function Header() {
             className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
             src={save}
             alt=""
+            onClick={() => navigate("/saved-movies")}
           />
         </div>
         <img src={profile} alt="" className="w-[24px] h-[24px]" />
