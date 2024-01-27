@@ -10,7 +10,7 @@ export default function Recomended() {
   const { data, setData }: any = context;
 
   return (
-    <div className="mt-[24px]">
+    <div className="mt-[24px] mb-[60px]">
       <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
         Recommended for you
       </h1>

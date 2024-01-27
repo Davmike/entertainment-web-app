@@ -1,19 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../../public/assets/logo.svg";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useContext } from "react";
+import { MyContext } from "../Components/Context";
+
+type LoginFormValues = {
+  email: string;
+  password: string;
+};
 
 export default function Login() {
-  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
+  const context = useContext(MyContext);
+  const { error, setError }: any = context;
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<LoginFormValues>();
 
-  const handleLogin = (data: { email: string; password: string }) => {
+  const handleLogin = (data: LoginFormValues) => {
     const registeredEmail = localStorage.getItem("registeredEmail");
     const registeredPassword = localStorage.getItem("registeredPassword");
 

@@ -18,9 +18,10 @@ function App() {
     MovieData.filter((item) => item.category === "Movie")
   );
 
-  const [showLogin, setShowLogin] = useState(true);
-  const [showMovie, setShowMovie] = useState(true);
-  const [showSeries, setShowSeries] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [showLogin, setShowLogin] = useState<boolean>(true);
+  const [showMovie, setShowMovie] = useState<boolean>(true);
+  const [showSeries, setShowSeries] = useState<boolean>(true);
 
   const router = createBrowserRouter([
     {
@@ -69,6 +70,8 @@ function App() {
           setSearchInput,
           movie,
           setMovie,
+          error,
+          setError,
         }}
       >
         <RouterProvider router={router} />
