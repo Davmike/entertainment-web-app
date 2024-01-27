@@ -19,6 +19,7 @@ function App() {
   );
 
   const [error, setError] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [showLogin, setShowLogin] = useState<boolean>(true);
   const [showMovie, setShowMovie] = useState<boolean>(true);
   const [showSeries, setShowSeries] = useState<boolean>(true);
@@ -72,6 +73,8 @@ function App() {
           setMovie,
           error,
           setError,
+          errorMessage,
+          setErrorMessage,
         }}
       >
         <RouterProvider router={router} />

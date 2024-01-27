@@ -37,19 +37,19 @@ export default function Login() {
   return (
     <div>
       <div className="flex justify-center items-center flex-col min-h-screen">
-        <img src={logo} alt="" />
-        <div className="bg-[#161D2F] rounded-[10px] w-[327px] h-[365px] mt-[58px] px-[24px] pt-[24px] pb-[32px]">
+        <img src={logo} alt="main logo" />
+        <div className="bg-[#161D2F] rounded-[10px] w-[327px] h-[365px] mt-[58px] px-[24px] pt-[24px] pb-[32px] xl:w-[400px] xl:h-[373px] xl:px-[32px]">
           <h1 className="text-[#FFFFFF] text-[32px] font-light">Login</h1>
           <form onSubmit={handleSubmit(handleLogin)}>
             <input
-              className="bg-[#161D2F] hover:border-b-[#FFFFFF] cursor-pointer border-b-[#5A698F] border-b mt-[40px] outline-none w-[279px] h-[37px] pl-[16px] text-[#ffffff] text-[15px] font-light leading-normal"
+              className="bg-[#161D2F] hover:border-b-[#FFFFFF] cursor-pointer border-b-[#5A698F] border-b mt-[40px] outline-none w-[279px] h-[37px] pl-[16px] text-[#ffffff] text-[15px] font-light leading-normal xl:w-[336px]"
               type="text"
               {...register("email", { required: "Can’t be empty" })}
               placeholder="Email address"
             />
             {errors.email && <p className="error">{errors.email.message}</p>}
             <input
-              className="bg-[#161D2F] hover:border-b-[#FFFFFF] cursor-pointer border-b-[#5A698F] border-b mt-[24px] outline-none w-[279px] h-[37px] pl-[16px] text-[#ffffff] text-[15px] font-light leading-normal"
+              className="bg-[#161D2F] hover:border-b-[#FFFFFF] cursor-pointer border-b-[#5A698F] border-b mt-[24px] outline-none w-[279px] h-[37px] pl-[16px] text-[#ffffff] text-[15px] font-light leading-normal xl:w-[336px]"
               type="password"
               {...register("password", { required: "Can’t be empty" })}
               placeholder="Password"
@@ -58,7 +58,7 @@ export default function Login() {
               <p className="error">{errors.password.message}</p>
             )}
             {error && <p className="error">{error}</p>}
-            <button className="mt-[40px] w-[279px] h-[48px] bg-[#FC4747] rounded-[6px] text-[#FFFFFF] text-[13px] font-light leading-normal hover:bg-[#FFFFFF] hover:text-[#161D2F]">
+            <button className="mt-[40px] w-[279px] h-[48px] bg-[#FC4747] rounded-[6px] text-[#FFFFFF] text-[13px] font-light leading-normal hover:bg-[#FFFFFF] hover:text-[#161D2F] xl:w-[336px]">
               Login to your account
             </button>
           </form>

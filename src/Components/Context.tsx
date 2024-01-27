@@ -3,6 +3,8 @@ import { createContext, useContext } from "react";
 interface ComponentsProps {
   error: string | null;
   setError: (error: string) => void;
+  errorMessage: string | null;
+  setErrorMessage: (errorMessage: string) => void;
   showLogin: boolean;
   setShowLogin: (showLogin: boolean) => void;
   showMovie: boolean;
