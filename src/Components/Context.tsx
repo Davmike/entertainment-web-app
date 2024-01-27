@@ -9,6 +9,10 @@ interface ComponentsProps {
   setShowSeries: (showSeries: boolean) => void;
   data: any;
   setData: (data: any) => void;
+  searchInput: string;
+  setSearchInput: (searchInput: string) => void;
+  movie: any;
+  setMovie: (movie: any) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

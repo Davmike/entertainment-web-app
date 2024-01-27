@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import search from "../../public/assets/icon-search.svg";
+import { MyContext } from "./Context";
 
 export default function SearchBar() {
+  const context = useContext(MyContext);
+  const { setSearchInput }: any = context;
+
   return (
     <div>
       <div className="flex justify-start gap-[16px] pl-[16px] pt-[24px]">
@@ -9,6 +14,7 @@ export default function SearchBar() {
           type="text"
           placeholder="Search for movies or TV series"
           className="searchInput"
+          onChange={(event) => setSearchInput(event.target.value)}
         />
       </div>
     </div>

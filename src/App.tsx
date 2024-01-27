@@ -8,9 +8,15 @@ import Movies from "./Components/Movies";
 import TvSeries from "./Components/TvSeries";
 import Recomended from "./Components/Recomended";
 import SaveMovies from "./Components/SaveMovies";
+import MovieData from "../data.json";
 
 function App() {
   const [data, setData] = useState([]);
+  const [searchInput, setSearchInput] = useState<string>("");
+
+  const [movie, setMovie] = useState(
+    MovieData.filter((item) => item.category === "Movie")
+  );
 
   const [showLogin, setShowLogin] = useState(true);
   const [showMovie, setShowMovie] = useState(true);
@@ -59,6 +65,10 @@ function App() {
           setShowSeries,
           data,
           setData,
+          searchInput,
+          setSearchInput,
+          movie,
+          setMovie,
         }}
       >
         <RouterProvider router={router} />
