@@ -22,7 +22,9 @@ export default function Movies() {
         </h1>
         <div className="flex flex-wrap gap-y-14">
           {moviesData
-            .filter((item) => item.title.includes(searchInput))
+            .filter((item) =>
+              item.title.toUpperCase().includes(searchInput.toUpperCase())
+            )
             .map((movie, index) => {
               return !movie.isTrending ? (
                 <div
