@@ -6,14 +6,17 @@ import save from "../../public/assets/icon-nav-bookmark.svg";
 import profile from "../../public/assets/image-avatar.png";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
+function DesktopHeader() {
   const navigate = useNavigate();
-
   return (
-    <header>
-      <div className="bg-[#161D2F] flex justify-between items-center px-[16px] h-[56px] xl:hidden">
-        <img src={logo} alt="" className="w-[25px] h-[20px]" />
-        <div className="flex items-center gap-[25px]">
+    <header className=" px-[32px] py-[32px]">
+      <div className="hidden bg-[#161D2F] w-[96px] h-[996px] xl:flex flex-col rounded-[20px]">
+        <img
+          src={logo}
+          alt=""
+          className="w-[25px] h-[20px] mt-[35px] ml-[35px]"
+        />
+        <div className="flex flex-col items-center gap-[25px] mt-[75px]">
           <img
             src={home}
             className="hover:opacity-50 transition-opacity duration-300 hover:filter hover:invert-[0%] cursor-pointer"
@@ -39,8 +42,14 @@ export default function Header() {
             onClick={() => navigate("/saved-movies")}
           />
         </div>
-        <img src={profile} alt="" className="w-[24px] h-[24px]" />
+        <img
+          src={profile}
+          alt=""
+          className="w-[40px] h-[40px] ml-[32px] mt-[640px]"
+        />
       </div>
     </header>
   );
 }
+
+export default DesktopHeader;
