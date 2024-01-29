@@ -8,8 +8,12 @@ export default function SearchBar() {
 
   return (
     <div>
-      <div className="flex justify-start gap-[16px] pl-[16px] pt-[24px]">
-        <img src={search} alt="" className="w-[24px] h-[24px]" />
+      <div className="flex justify-start gap-[16px] pl-[16px] pt-[24px] xl:mt-[40px]">
+        <img
+          src={search}
+          alt=""
+          className="w-[24px] h-[24px] xl:w-[32px] xl:h-[32px]"
+        />
         <input
           type="text"
           placeholder="Search for movies or TV series"

@@ -1,4 +1,5 @@
 import Header from "./Header";
+import DesktopHeader from "./DesktopHeader";
 import SearchBar from "./SearchBar";
 import movieImg from "../../public/assets/icon-category-movie.svg";
 import unsave from "../../public/assets/icon-bookmark-empty.svg";
@@ -13,6 +14,7 @@ export default function SaveMovies() {
   return (
     <>
       <Header />
+      <DesktopHeader />
       <SearchBar />
       <div className="mt-[24px]">
         <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">

@@ -67,4 +67,8 @@ input::placeholder {
   .error {
     margin-left: 247px;
   }
+
+  .slick-list {
+    max-width: 1250px;
+  }
 }

@@ -9,12 +9,12 @@ import { useNavigate } from "react-router-dom";
 function DesktopHeader() {
   const navigate = useNavigate();
   return (
-    <header className=" px-[32px] py-[32px]">
+    <header className="xl:px-[32px] xl:py-[32px]">
       <div className="hidden bg-[#161D2F] w-[96px] h-[996px] xl:flex flex-col rounded-[20px]">
         <img
           src={logo}
           alt=""
-          className="w-[25px] h-[20px] mt-[35px] ml-[35px]"
+          className="w-[32px] h-[25px] mt-[35px] ml-[35px]"
         />
         <div className="flex flex-col items-center gap-[25px] mt-[75px]">
           <img

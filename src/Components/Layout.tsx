@@ -7,12 +7,16 @@ import DesktopHeader from "./DesktopHeader";
 export default function Layout() {
   return (
     <>
-      <div className="xl:flex xl:flex-row">
-        <Header />
-        <DesktopHeader />
-        <SearchBar />
-        <Trending />
-        <Outlet />
+      <div className="xl:flex">
+        <div className="xl:flex xl:flex-col">
+          <DesktopHeader />
+        </div>
+        <div className="xl:flex xl:flex-col xl:flex-grow]">
+          <Header />
+          <SearchBar />
+          <Trending />
+          <Outlet />
+        </div>
       </div>
     </>
   );

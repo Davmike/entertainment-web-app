@@ -1,6 +1,7 @@
 import movieImg from "../../public/assets/icon-category-movie.svg";
 import MovieData from "../../data.json";
 import Header from "./Header";
+import DesktopHeader from "./DesktopHeader";
 import SearchBar from "./SearchBar";
 import unsave from "../../public/assets/icon-bookmark-empty.svg";
 import saved from "../../public/assets/icon-bookmark-full.svg";
@@ -16,6 +17,7 @@ export default function TvSeries() {
   return (
     <>
       <Header />
+      <DesktopHeader />
       <SearchBar />
       <div className="mt-[24px]">
         <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
