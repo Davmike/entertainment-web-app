@@ -17,105 +17,112 @@ export default function TvSeries() {
   return (
     <>
       <Header />
-      <DesktopHeader />
-      <SearchBar />
-      <div className="mt-[24px]">
-        <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
-          TV Series
-        </h1>
-        <div className="flex flex-wrap gap-y-14">
-          {tvSeriesData
-            .filter((item) =>
-              item.title.toUpperCase().includes(searchInput.toUpperCase())
-            )
-            .map((movie, index) => {
-              return !movie.isTrending ? (
-                <div
-                  className="min-w-[164px] h-[110px] relative mt-[16px] pl-[16px]"
-                  key={index}
-                >
-                  <img
-                    src={movie.thumbnail.regular?.small}
-                    alt=""
-                    className="rounded-[8px] w-[100%] h-[100%]"
-                  />
-                  <div
-                    className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%] cursor-pointer"
-                    onClick={() => {
-                      if (!data.includes(movie)) {
-                        setData([...data, movie]);
-                      } else {
-                        setData(
-                          data.filter(
-                            (
-                              film:
-                                | {
-                                    title: string;
-                                    thumbnail: {
-                                      trending: {
-                                        small: string;
-                                        large: string;
-                                      };
-                                      regular: {
-                                        small: string;
-                                        medium: string;
-                                        large: string;
-                                      };
-                                    };
-                                    year: number;
-                                    category: string;
-                                    rating: string;
-                                    isBookmarked: boolean;
-                                    isTrending: boolean;
-                                  }
-                                | {
-                                    title: string;
-                                    thumbnail: {
-                                      regular: {
-                                        small: string;
-                                        medium: string;
-                                        large: string;
-                                      };
-                                      trending?: undefined;
-                                    };
-                                    year: number;
-                                    category: string;
-                                    rating: string;
-                                    isBookmarked: boolean;
-                                    isTrending: boolean;
-                                  }
-                            ) => film !== movie
-                          )
-                        );
-                      }
-                    }}
-                  >
-                    <img alt="" src={data.includes(movie) ? saved : unsave} />
-                  </div>
-                  <div className="mt-[8px]">
-                    <div className="flex items-center gap-[6px]">
-                      <p className="text-[11px] text-[white] font-light opacity-[0.75]">
-                        {movie.year}
-                      </p>
-                      <div className="bg-white rounded-full w-[2px] h-[2px] opacity-[0.5]"></div>
-                      <div className="flex items-center gap-[6px]">
-                        <img src={movieImg} alt="" />
-                        <p className="text-[11px] text-[white] font-light opacity-[0.75]">
-                          {movie.category}
-                        </p>
+      <div className="flex flex-col xl:flex-row">
+        <DesktopHeader />
+        <div className="w-full xl:w-auto">
+          <SearchBar />
+          <div className="mt-[24px]">
+            <h1 className="text-[#FFFFFF] text-[20px] font-light pl-[16px]">
+              TV Series
+            </h1>
+            <div className="flex flex-wrap gap-y-14">
+              {tvSeriesData
+                .filter((item) =>
+                  item.title.toUpperCase().includes(searchInput.toUpperCase())
+                )
+                .map((movie, index) => {
+                  return !movie.isTrending ? (
+                    <div
+                      className="min-w-[164px] h-[110px] relative mt-[16px] pl-[16px]"
+                      key={index}
+                    >
+                      <img
+                        src={movie.thumbnail.regular?.small}
+                        alt=""
+                        className="rounded-[8px] w-[100%] h-[100%]"
+                      />
+                      <div
+                        className="w-[32px] h-[32px] bg-[#596276] opacity-[0.5] rounded-full flex justify-center items-center absolute top-[5%] left-[77%] cursor-pointer"
+                        onClick={() => {
+                          if (!data.includes(movie)) {
+                            setData([...data, movie]);
+                          } else {
+                            setData(
+                              data.filter(
+                                (
+                                  film:
+                                    | {
+                                        title: string;
+                                        thumbnail: {
+                                          trending: {
+                                            small: string;
+                                            large: string;
+                                          };
+                                          regular: {
+                                            small: string;
+                                            medium: string;
+                                            large: string;
+                                          };
+                                        };
+                                        year: number;
+                                        category: string;
+                                        rating: string;
+                                        isBookmarked: boolean;
+                                        isTrending: boolean;
+                                      }
+                                    | {
+                                        title: string;
+                                        thumbnail: {
+                                          regular: {
+                                            small: string;
+                                            medium: string;
+                                            large: string;
+                                          };
+                                          trending?: undefined;
+                                        };
+                                        year: number;
+                                        category: string;
+                                        rating: string;
+                                        isBookmarked: boolean;
+                                        isTrending: boolean;
+                                      }
+                                ) => film !== movie
+                              )
+                            );
+                          }
+                        }}
+                      >
+                        <img
+                          alt=""
+                          src={data.includes(movie) ? saved : unsave}
+                        />
                       </div>
-                      <div className="bg-white rounded-full w-[2px] h-[2px] opacity-[0.5]"></div>
-                      <p className="text-[11px] text-[white] font-light opacity-[0.75]">
-                        {movie.rating}
-                      </p>
+                      <div className="mt-[8px]">
+                        <div className="flex items-center gap-[6px]">
+                          <p className="text-[11px] text-[white] font-light opacity-[0.75]">
+                            {movie.year}
+                          </p>
+                          <div className="bg-white rounded-full w-[2px] h-[2px] opacity-[0.5]"></div>
+                          <div className="flex items-center gap-[6px]">
+                            <img src={movieImg} alt="" />
+                            <p className="text-[11px] text-[white] font-light opacity-[0.75]">
+                              {movie.category}
+                            </p>
+                          </div>
+                          <div className="bg-white rounded-full w-[2px] h-[2px] opacity-[0.5]"></div>
+                          <p className="text-[11px] text-[white] font-light opacity-[0.75]">
+                            {movie.rating}
+                          </p>
+                        </div>
+                        <h2 className="text-[14px] text-[white] font-medium">
+                          {movie.title}
+                        </h2>
+                      </div>
                     </div>
-                    <h2 className="text-[14px] text-[white] font-medium">
-                      {movie.title}
-                    </h2>
-                  </div>
-                </div>
-              ) : null;
-            })}
+                  ) : null;
+                })}
+            </div>
+          </div>
         </div>
       </div>
     </>
